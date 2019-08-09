@@ -76,7 +76,7 @@ const OffsetMethod = {
 class ScrollSpy {
   constructor(element, config) {
     this._element = element
-    this._scrollElement = element.tagName === 'BODY' ? window : element
+    this._scrollElement = element.tagName.toUpperCase() === 'BODY' ? window : element
     this._config = this._getConfig(config)
     this._selector = `${this._config.target} ${Selector.NAV_LINKS},` +
                           `${this._config.target} ${Selector.LIST_ITEMS},` +

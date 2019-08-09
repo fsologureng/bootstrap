@@ -552,7 +552,7 @@ class Modal {
 EventHandler.on(document, Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function (event) {
   const target = getElementFromSelector(this)
 
-  if (this.tagName === 'A' || this.tagName === 'AREA') {
+  if (this.tagName.toUpperCase() === 'A' || this.tagName.toUpperCase() === 'AREA') {
     event.preventDefault()
   }
 
