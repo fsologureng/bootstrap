@@ -68,7 +68,7 @@ const METHOD_POSITION = 'position'
 class ScrollSpy {
   constructor(element, config) {
     this._element = element
-    this._scrollElement = element.tagName === 'BODY' ? window : element
+    this._scrollElement = element.tagName.toUpperCase() === 'BODY' ? window : element
     this._config = this._getConfig(config)
     this._selector = `${this._config.target} ${SELECTOR_NAV_LINKS}, ${this._config.target} ${SELECTOR_LIST_ITEMS}, ${this._config.target} .${CLASS_NAME_DROPDOWN_ITEM}`
     this._offsets = []

@@ -381,7 +381,7 @@ class Collapse {
 
 EventHandler.on(document, EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (event) {
   // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
-  if (event.target.tagName === 'A') {
+  if (event.target.tagName.toUpperCase() === 'A') {
     event.preventDefault()
   }
 

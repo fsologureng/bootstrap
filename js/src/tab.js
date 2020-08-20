@@ -83,7 +83,7 @@ class Tab {
     const listElement = this._element.closest(SELECTOR_NAV_LIST_GROUP)
 
     if (listElement) {
-      const itemSelector = listElement.nodeName === 'UL' || listElement.nodeName === 'OL' ? SELECTOR_ACTIVE_UL : SELECTOR_ACTIVE
+      const itemSelector = listElement.nodeName.toUpperCase() === 'UL' || listElement.nodeName.toUpperCase() === 'OL' ? SELECTOR_ACTIVE_UL : SELECTOR_ACTIVE
       previous = SelectorEngine.find(itemSelector, listElement)
       previous = previous[previous.length - 1]
     }
@@ -134,7 +134,7 @@ class Tab {
   // Private
 
   _activate(element, container, callback) {
-    const activeElements = container && (container.nodeName === 'UL' || container.nodeName === 'OL') ?
+    const activeElements = container && (container.nodeName.toUpperCase() === 'UL' || container.nodeName.toUpperCase() === 'OL') ?
       SelectorEngine.find(SELECTOR_ACTIVE_UL, container) :
       SelectorEngine.children(container, SELECTOR_ACTIVE)
 
